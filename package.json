@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pankod/refine-core": "^3.86.2",
+    "@pankod/refine-react-hook-form": "^3.33.2",
+    "@pankod/refine-react-router-v6": "^3.36.2",
+    "@pankod/refine-react-table": "^4.9.0",
+    "@pankod/refine-simple-rest": "^3.35.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -39,5 +44,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1"
   }
 }

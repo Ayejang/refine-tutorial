@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Refine } from "@pankod/refine-core";
+import routerProvider from "@pankod/refine-react-router-v6";
+import dataProvider from "@pankod/refine-simple-rest";
+import "./index.css";
+import { Layout } from "./components/Layout";
+import { PostIcon } from "./icons";
+import { PostCreate, PostEdit, PostList, PostShow } from "./pages/posts";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Refine
+      routerProvider={routerProvider}
+      dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+      resources={[
+        {
+          name: "posts",
+          icon: PostIcon,
+          list: PostList,
+          show: PostShow,
+          edit: PostEdit,
+          create: PostCreate,
+        },
+      ]}
+      Layout={Layout}
+    />
   );
-}
+};
 
 export default App;
